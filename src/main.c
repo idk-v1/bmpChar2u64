@@ -9,10 +9,10 @@ void toU64Str(bool grid[8][8])
 
 	for (int y = 0; y < 8; y++)
 	{
-		str[y * 9] = '\'';
+		str[1 + y * 9] = '\'';
 		for (int x = 0; x < 8; x++)
 		{
-			str[1 + x + y * 9] = '0' + grid[x][y];
+			str[2 + x + y * 9] = '0' + grid[x][y];
 		}
 	}
 
