@@ -29,7 +29,7 @@ int main(int argc, char** argv)
 
 	int scale = 50;
 	sft_window* win = sft_window_open("Bitmap Char -> u64",
-		417, 440, -1, -1,
+		400, 400, -1, -1,
 		sft_flag_darkmode | sft_flag_noresize);
 
 	bool grid[8][8] = { 0 };
@@ -57,11 +57,14 @@ int main(int argc, char** argv)
 
 			sft_window_fill(win, 0xFF000000);
 
-			for (int i = 0; i < 9; i++)
+			for (int i = 0; i < 8; i++)
 			{
 				sft_window_drawRect(win, i * scale, 0, 1, 8 * scale, 0xFFFFFFFF);
 				sft_window_drawRect(win, 0, i * scale, 8 * scale + 1, 1, 0xFFFFFFFF);
 			}
+			sft_window_drawRect(win, 8 * scale - 1, 0, 1, 8 * scale, 0xFFFFFFFF);
+			sft_window_drawRect(win, 0, 8 * scale - 1, 8 * scale + 1, 1, 0xFFFFFFFF);
+
 
 			for (int x = 0; x < 8; x++)
 				for (int y = 0; y < 8; y++)
